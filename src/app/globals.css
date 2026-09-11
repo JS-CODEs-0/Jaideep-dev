@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --bg-obsidian: #08080a;
+  --bg-charcoal: #111216;
+  --bg-elevated: #181a20;
+  --border-gothic: #22252e;
+  --border-accent: #3b4150;
+  --text-bone: #f0ede6;
+  --text-parchment: #c5c1b4;
+  --text-stone: #6b7080;
+  --accent-olive: #5e6b54;
+  --accent-slate: #4a5b70;
+}
+
+@theme inline {
+  --color-obsidian: var(--bg-obsidian);
+  --color-charcoal: var(--bg-charcoal);
+  --color-elevated: var(--bg-elevated);
+  --color-border-gothic: var(--border-gothic);
+  --color-border-accent: var(--border-accent);
+  --color-bone: var(--text-bone);
+  --color-parchment: var(--text-parchment);
+  --color-stone: var(--text-stone);
+  --color-olive: var(--accent-olive);
+  --color-slate: var(--accent-slate);
+
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--bg-obsidian);
+  color: var(--text-parchment);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Text Selection */
+::selection {
+  background-color: var(--border-accent);
+  color: var(--text-bone);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-obsidian);
+  border-left: 1px solid var(--border-gothic);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-accent);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-stone);
+}
+
+/* Grid Line Utilities & Corner Marks */
+.hairline-border {
+  border: 1px solid var(--border-gothic);
+}
+
+.hairline-b {
+  border-bottom: 1px solid var(--border-gothic);
+}
+
+.hairline-t {
+  border-top: 1px solid var(--border-gothic);
+}
+
+.hairline-l {
+  border-left: 1px solid var(--border-gothic);
+}
+
+.hairline-r {
+  border-right: 1px solid var(--border-gothic);
+}
+
+/* Subtle Dither Background Pattern */
+.bg-dither {
+  background-image: radial-gradient(var(--border-gothic) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+/* Reduced Motion Accessibility Overrides */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
