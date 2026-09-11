@@ -93,6 +93,11 @@ body {
   background-size: 8px 8px;
 }
 
+/* Vertical Text Utility */
+.writing-vertical-rl {
+  writing-mode: vertical-rl;
+}
+
 /* Reduced Motion Accessibility Overrides */
 @media (prefers-reduced-motion: reduce) {
   html {

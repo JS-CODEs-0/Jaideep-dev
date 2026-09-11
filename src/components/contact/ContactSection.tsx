@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { BentoCard } from '@/components/ui/BentoCard';
+import { DitherHalftoneSurface } from '@/components/ui/DitherHalftoneSurface';
+import { DataHeaderBar } from '@/components/ui/DataHeaderBar';
 import { CornerMarks } from '@/components/ui/CornerMarks';
 
 interface FormState {
@@ -70,11 +71,9 @@ export const ContactSection: React.FC = () => {
         <CornerMarks />
 
         {/* Left Column: Direct Editorial Text (6 cols desktop) */}
-        <BentoCard colSpan="col-span-12 lg:col-span-6" className="p-8 flex flex-col justify-between">
+        <DitherHalftoneSurface className="col-span-12 lg:col-span-6 p-8 flex flex-col justify-between">
           <div>
-            <span className="font-mono text-xs text-olive uppercase tracking-widest block mb-4">
-              [ TRANSMISSION // CONTACT PROTOCOL ]
-            </span>
+            <DataHeaderBar index="TRANSMISSION" title="CONTACT PROTOCOL" className="mb-4" />
 
             <h3 className="font-serif text-3xl sm:text-4xl text-bone uppercase mb-6 leading-tight">
               OPEN FOR DISCUSSIONS ON SYSTEMS ARCHITECTURE & AI ENGINEERING.
@@ -107,14 +106,11 @@ export const ContactSection: React.FC = () => {
           <div className="pt-6 mt-6 border-t border-border-gothic/40 font-mono text-[10px] text-stone">
             STATUS: ENDPOINT READY FOR DIRECT MESSAGING
           </div>
-        </BentoCard>
+        </DitherHalftoneSurface>
 
         {/* Right Column: Accessible Contact Form (6 cols desktop) */}
-        <BentoCard colSpan="col-span-12 lg:col-span-6" className="p-8">
-          <div className="font-mono text-xs text-stone uppercase tracking-widest mb-6 pb-3 border-b border-border-gothic/50 flex justify-between">
-            <span>[ FORM // DIRECT MESSAGE ]</span>
-            <span className="text-olive">CLIENT-VALIDATED</span>
-          </div>
+        <DitherHalftoneSurface className="col-span-12 lg:col-span-6 p-8">
+          <DataHeaderBar index="FORM" title="DIRECT MESSAGE TRANSMISSION" badge="CLIENT-VALIDATED" className="mb-6" />
 
           {status === 'submitted' ? (
             <div className="p-6 bg-obsidian border border-border-accent text-center font-mono space-y-4">
@@ -215,7 +211,7 @@ export const ContactSection: React.FC = () => {
               </div>
             </form>
           )}
-        </BentoCard>
+        </DitherHalftoneSurface>
       </div>
     </SectionWrapper>
   );

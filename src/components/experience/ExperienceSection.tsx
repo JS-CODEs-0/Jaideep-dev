@@ -1,9 +1,12 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
+import { motion, useReducedMotion } from 'framer-motion';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { BentoCard } from '@/components/ui/BentoCard';
+import { DitherHalftoneSurface } from '@/components/ui/DitherHalftoneSurface';
+import { DataHeaderBar } from '@/components/ui/DataHeaderBar';
 
 interface EngineeringArchiveEntry {
   index: string;
@@ -60,52 +63,76 @@ const ARCHIVE_ENTRIES: EngineeringArchiveEntry[] = [
 ];
 
 export const ExperienceSection: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <SectionWrapper id="experience" className="border-b border-border-gothic">
-      <SectionHeader
-        index="04 // ENGINEERING ARCHIVE"
-        title="ENGINEERING ARCHIVE"
-        subtitle="Archival record of verified engineering projects, system builds, and software initiatives."
-      />
+    <SectionWrapper id="experience" className="relative border-b border-border-gothic overflow-hidden bg-obsidian">
+      {/* Background Monochrome Halftone Artwork Layer Stretching Across Full Section */}
+      <motion.div
+        aria-hidden="true"
+        initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 1.03 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: shouldReduceMotion ? 0.1 : 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden"
+      >
+        <div className="relative w-full h-full">
+          <Image
+            src="/images/experience-halftone.jpg"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            className="object-cover object-center opacity-35 mix-blend-screen filter contrast-125 brightness-110"
+          />
+          {/* Vignette Masks to ensure text legibility while displaying background artwork */}
+          <div className="absolute inset-0 bg-gradient-to-r from-obsidian/75 via-obsidian/45 to-obsidian/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-obsidian/50 via-transparent to-obsidian/50" />
+        </div>
+      </motion.div>
 
-      <div className="space-y-6">
-        {ARCHIVE_ENTRIES.map((entry) => (
-          <BentoCard key={entry.index} className="p-6 sm:p-8">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 mb-4 border-b border-border-gothic/50 font-mono text-xs">
-              <div className="flex items-center gap-3">
-                <span className="text-olive">{entry.index} {'//'}</span>
-                <span className="text-bone uppercase font-semibold">{entry.category}</span>
-                <span className="text-stone font-normal hidden sm:inline">|</span>
-                <span className="text-stone uppercase hidden sm:inline">{entry.scope}</span>
+      {/* Foreground Content */}
+      <div className="relative z-10">
+        <SectionHeader
+          index="04 // ENGINEERING ARCHIVE"
+          title="ENGINEERING ARCHIVE"
+          subtitle="Archival record of verified engineering projects, system builds, and software initiatives."
+        />
+
+        <div className="space-y-6">
+          {ARCHIVE_ENTRIES.map((entry) => (
+            <DitherHalftoneSurface key={entry.index} className="p-6 sm:p-8">
+              <DataHeaderBar
+                index={`${entry.index} // ${entry.category}`}
+                badge={entry.status}
+                className="mb-4"
+              />
+
+              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-bone uppercase mb-3">
+                {entry.title}
+              </h3>
+
+              <p className="font-sans text-base text-parchment leading-relaxed mb-6 max-w-4xl">
+                {entry.summary}
+              </p>
+
+              <div className="pt-4 border-t border-border-gothic/40">
+                <span className="font-mono text-xs text-stone uppercase tracking-widest block mb-3">
+                  KEY TECHNICAL DELIVERABLES:
+                </span>
+                <ul className="space-y-2 font-sans text-sm text-parchment list-disc list-inside">
+                  {entry.deliverables.map((item, idx) => (
+                    <li key={idx} className="leading-relaxed">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <span className="self-start md:self-auto text-[10px] tracking-wider px-2.5 py-1 bg-obsidian border border-border-gothic text-olive uppercase">
-                [{entry.status}]
-              </span>
-            </div>
-
-            <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-bone uppercase mb-3">
-              {entry.title}
-            </h3>
-
-            <p className="font-sans text-base text-parchment leading-relaxed mb-6 max-w-4xl">
-              {entry.summary}
-            </p>
-
-            <div className="pt-4 border-t border-border-gothic/40">
-              <span className="font-mono text-xs text-stone uppercase tracking-widest block mb-3">
-                KEY TECHNICAL DELIVERABLES:
-              </span>
-              <ul className="space-y-2 font-sans text-sm text-parchment list-disc list-inside">
-                {entry.deliverables.map((item, idx) => (
-                  <li key={idx} className="leading-relaxed">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </BentoCard>
-        ))}
+            </DitherHalftoneSurface>
+          ))}
+        </div>
       </div>
     </SectionWrapper>
   );
 };
+

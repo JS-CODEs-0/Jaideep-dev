@@ -4,24 +4,31 @@ import './globals.css';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
+import { ArchivalRail } from '@/components/ui/ArchivalRail';
 
 const instrumentSerif = Instrument_Serif({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-instrument-serif',
   display: 'swap',
+  fallback: ['Georgia', 'serif'],
+  adjustFontFallback: false,
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains-mono',
   display: 'swap',
+  fallback: ['Consolas', 'Monaco', 'Courier New', 'monospace'],
+  adjustFontFallback: false,
 });
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+  fallback: ['system-ui', 'arial', 'sans-serif'],
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -67,7 +74,8 @@ export default function RootLayout({
         <SmoothScroll>
           <div className="relative min-h-screen flex flex-col justify-between overflow-x-hidden pt-16">
             <Navigation />
-            <div className="flex-1">{children}</div>
+            <ArchivalRail />
+            <div className="flex-1 lg:pl-12">{children}</div>
             <Footer />
           </div>
         </SmoothScroll>
