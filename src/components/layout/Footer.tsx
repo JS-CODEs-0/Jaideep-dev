@@ -18,9 +18,32 @@ export const Footer: React.FC = () => {
           JAIDEEP SINGH © {new Date().getFullYear()} {'//'} ALL RIGHTS RESERVED
         </div>
 
-        {/* Center: Identity & Location */}
-        <div className="text-olive text-[11px] tracking-widest uppercase">
-          COMPUTER SCIENCE STUDENT · AI & SOFTWARE DEVELOPER {'//'} INDIA
+        {/* Center: Social & Direct Links */}
+        <div className="flex flex-wrap justify-center items-center gap-3 text-[11px] tracking-wider uppercase text-stone">
+          <a
+            href="mailto:jaideepsingh2878@gmail.com"
+            className="hover:text-bone transition-colors"
+          >
+            [ EMAIL ]
+          </a>
+          <span className="text-border-gothic">/</span>
+          <a
+            href="https://github.com/JS-CODEs-0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-bone transition-colors"
+          >
+            [ GITHUB ]
+          </a>
+          <span className="text-border-gothic">/</span>
+          <a
+            href="https://www.linkedin.com/in/jaideep-singh-6a54bb436"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-bone transition-colors"
+          >
+            [ LINKEDIN ]
+          </a>
         </div>
 
         {/* Right: Back to top action */}

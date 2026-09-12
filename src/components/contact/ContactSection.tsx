@@ -59,7 +59,7 @@ export const ContactSection: React.FC = () => {
               </h3>
 
               <p className="font-sans text-base sm:text-lg text-parchment leading-relaxed mb-6">
-                I build reliable software infrastructure, AI data pipelines, and responsive web platforms. Feel free to reach out directly via GitHub to discuss technical builds.
+                I build reliable software infrastructure, AI data pipelines, and responsive web platforms. Feel free to reach out directly via email or LinkedIn to discuss technical builds.
               </p>
 
               <div className="p-4 bg-obsidian/60 border border-border-gothic font-mono text-xs text-stone space-y-2">
@@ -70,6 +70,12 @@ export const ContactSection: React.FC = () => {
                 <div className="flex justify-between">
                   <span>ROLE:</span>
                   <span className="text-bone">CS STUDENT · AI & DEVELOPER</span>
+                </div>
+                <div className="flex justify-between items-center gap-2">
+                  <span>EMAIL:</span>
+                  <a href="mailto:jaideepsingh2878@gmail.com" className="text-olive hover:underline truncate">
+                    jaideepsingh2878@gmail.com
+                  </a>
                 </div>
                 <div className="flex justify-between">
                   <span>LOCATION:</span>
@@ -93,6 +99,36 @@ export const ContactSection: React.FC = () => {
               <DataHeaderBar index="02" title="DIRECT LINKS" className="mb-6" />
 
               <div className="space-y-4 font-mono text-xs">
+                {/* Email Link */}
+                <a
+                  href="mailto:jaideepsingh2878@gmail.com"
+                  className="flex items-center justify-between p-4 bg-obsidian/60 border border-border-gothic text-bone hover:border-border-accent hover:text-white transition-colors group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-accent"
+                >
+                  <div>
+                    <span className="text-stone block text-[10px] uppercase mb-0.5">DIRECT EMAIL</span>
+                    <span className="font-bold text-sm tracking-wide">[ EMAIL ]</span>
+                  </div>
+                  <span className="text-olive group-hover:translate-x-1 transition-transform truncate max-w-[200px] sm:max-w-none">
+                    jaideepsingh2878@gmail.com ↗
+                  </span>
+                </a>
+
+                {/* LinkedIn Link */}
+                <a
+                  href="https://www.linkedin.com/in/jaideep-singh-6a54bb436"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-4 bg-obsidian/60 border border-border-gothic text-bone hover:border-border-accent hover:text-white transition-colors group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-accent"
+                >
+                  <div>
+                    <span className="text-stone block text-[10px] uppercase mb-0.5">PROFESSIONAL PROFILE</span>
+                    <span className="font-bold text-sm tracking-wide">[ LINKEDIN ]</span>
+                  </div>
+                  <span className="text-olive group-hover:translate-x-1 transition-transform">
+                    linkedin.com/in/jaideep-singh ↗
+                  </span>
+                </a>
+
                 {/* GitHub Link */}
                 <a
                   href="https://github.com/JS-CODEs-0"
@@ -108,18 +144,6 @@ export const ContactSection: React.FC = () => {
                     github.com/JS-CODEs-0 ↗
                   </span>
                 </a>
-
-                {/* Developer Profile Info */}
-                <div className="p-4 bg-obsidian/60 border border-border-gothic text-stone space-y-2">
-                  <span className="text-bone font-medium block text-xs uppercase mb-1">
-                    TECHNICAL FOCUS AREAS:
-                  </span>
-                  <ul className="space-y-1 text-[11px] list-disc list-inside text-parchment font-sans">
-                    <li>Asynchronous Python APIs & PostgreSQL Databases</li>
-                    <li>Machine Learning Forecasting & Anomaly Solvers</li>
-                    <li>Responsive Modern Web Applications & Interfaces</li>
-                  </ul>
-                </div>
               </div>
             </div>
 
