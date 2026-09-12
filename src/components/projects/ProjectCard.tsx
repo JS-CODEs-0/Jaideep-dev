@@ -77,13 +77,25 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onInsp
             [ INSPECT ARCHITECTURE ]
           </button>
 
-          <Link
-            href={`/work/${project.id}`}
-            className="font-mono text-xs uppercase tracking-wider text-bone bg-charcoal hover:bg-elevated hover:border-border-accent px-4 py-2 border border-border-gothic transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-accent flex items-center gap-1"
-          >
-            <span>[ CASE STUDY</span>
-            <span className="text-olive">↗ ]</span>
-          </Link>
+          {project.liveUrl ? (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs uppercase tracking-wider text-bone bg-charcoal hover:bg-elevated hover:border-border-accent px-4 py-2 border border-border-gothic transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-accent flex items-center gap-1"
+            >
+              <span>[ VIEW LIVE SITE</span>
+              <span className="text-olive">↗ ]</span>
+            </a>
+          ) : (
+            <Link
+              href={`/work/${project.id}`}
+              className="font-mono text-xs uppercase tracking-wider text-bone bg-charcoal hover:bg-elevated hover:border-border-accent px-4 py-2 border border-border-gothic transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-accent flex items-center gap-1"
+            >
+              <span>[ CASE STUDY</span>
+              <span className="text-olive">↗ ]</span>
+            </Link>
+          )}
         </div>
       </div>
     </DitherHalftoneSurface>

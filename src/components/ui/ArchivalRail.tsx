@@ -12,7 +12,7 @@ export const ArchivalRail: React.FC = () => {
       >
         <div className="writing-vertical-rl rotate-180 tracking-[0.25em] uppercase text-stone flex items-center gap-3">
           <span className="w-1.5 h-1.5 rounded-full bg-olive animate-pulse" />
-          <span>JAIDEEP SINGH {'//'} SOFTWARE & AI ENGINEER</span>
+          <span>JAIDEEP SINGH {'//'} COMPUTER SCIENCE STUDENT · AI & SOFTWARE DEVELOPER</span>
         </div>
 
         <div className="writing-vertical-rl rotate-180 tracking-widest text-olive uppercase">
@@ -26,7 +26,7 @@ export const ArchivalRail: React.FC = () => {
           <span className="w-1.5 h-1.5 rounded-full bg-olive animate-pulse" />
           <span className="text-bone">JAIDEEP SINGH</span>
         </div>
-        <span className="text-olive">[SOFTWARE & AI ENGINEER // INDIA]</span>
+        <span className="text-olive">[CS STUDENT · AI & SOFTWARE DEVELOPER // INDIA]</span>
       </div>
     </>
   );

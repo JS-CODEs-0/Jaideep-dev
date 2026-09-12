@@ -54,7 +54,7 @@ export const ProjectsSection: React.FC = () => {
         <SectionHeader
           index="01 // SELECTED WORK"
           title="FEATURED WORK"
-          subtitle="Archival repository of systems, software & intelligent pipelines."
+          subtitle="Selected software engineering projects, AI systems, and responsive web applications."
         />
 
         <ProjectBentoGrid projects={PROJECTS_DATA} onInspect={handleInspect} />

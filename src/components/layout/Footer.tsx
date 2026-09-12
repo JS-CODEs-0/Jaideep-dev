@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
 
         {/* Center: Identity & Location */}
         <div className="text-olive text-[11px] tracking-widest uppercase">
-          SOFTWARE & AI ENGINEER {'//'} INDIA
+          COMPUTER SCIENCE STUDENT · AI & SOFTWARE DEVELOPER {'//'} INDIA
         </div>
 
         {/* Right: Back to top action */}

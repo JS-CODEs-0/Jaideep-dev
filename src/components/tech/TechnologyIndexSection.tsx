@@ -19,11 +19,11 @@ const TECH_CATEGORIES: TechCategory[] = [
   {
     index: '01',
     title: 'AI & ML',
-    description: 'Scikit-learn models, telemetry pattern analysis, load forecasting, and evaluation heuristics.',
+    description: 'Scikit-learn models, telemetry pattern analysis, load forecasting, and numerical computation.',
     items: [
       { name: 'Python 3.11', context: 'Primary Language' },
       { name: 'scikit-learn', context: 'ML Forecasting & Anomaly' },
-      { name: 'numpy', context: 'Numerical Computation' },
+      { name: 'NumPy', context: 'Numerical Computation' },
       { name: 'Pydantic v2', context: 'Schema Validation' },
       { name: 'Pattern Evaluation', context: 'Rule-based Heuristics' },
     ],
@@ -45,15 +45,15 @@ const TECH_CATEGORIES: TechCategory[] = [
   {
     index: '03',
     title: 'CREATIVE WEB & COMPUTATION',
-    description: 'Type-safe frontend design systems, monospaced ASCII renderers, and editorial web applications.',
+    description: 'Type-safe frontend architectures, responsive design systems, and web applications.',
     items: [
       { name: 'TypeScript', context: 'Strict Type System' },
       { name: 'React 18', context: 'Component Architecture' },
       { name: 'Next.js 14', context: 'App Router Framework' },
       { name: 'Tailwind CSS', context: 'Utility Design Tokens' },
       { name: 'Framer Motion', context: 'Restrained Animation' },
-      { name: 'Lenis', context: 'Smooth Scroll Core' },
-      { name: 'ASCII Art System', context: 'Lightweight Renderer' },
+      { name: 'HTML5 & CSS3', context: 'Semantic Web Standards' },
+      { name: 'JavaScript', context: 'Core Web Logic' },
     ],
   },
   {
@@ -115,7 +115,6 @@ export const TechnologyIndexSection: React.FC = () => {
               <div>
                 <DataHeaderBar
                   index={`${cat.index} // ${cat.title}`}
-                  badge="VERIFIED"
                   className="mb-4"
                 />
 
@@ -139,8 +138,8 @@ export const TechnologyIndexSection: React.FC = () => {
               </div>
 
               <div className="mt-8 pt-4 border-t border-border-gothic/40 font-mono text-[10px] text-stone flex justify-between">
-                <span>ENTRIES: {cat.items.length}</span>
-                <span className="text-olive">REPO VERIFIED</span>
+                <span>TOTAL TECHNOLOGIES: {cat.items.length}</span>
+                <span className="text-olive">PROJECT STACK</span>
               </div>
             </DitherHalftoneSurface>
           ))}

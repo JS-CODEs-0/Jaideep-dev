@@ -32,13 +32,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Jaideep Singh — Software & AI Engineer',
+  title: 'Jaideep Singh — Computer Science Student | AI & Software Developer',
   description:
-    'Gothic computational archive documenting software engineering, AI systems infrastructure, and technical work by Jaideep Singh.',
+    'Portfolio of Jaideep Singh, a Computer Science student building software, AI/ML systems, backend infrastructure, and modern web applications.',
   keywords: [
     'Jaideep Singh',
-    'Software Engineer',
-    'AI Engineer',
+    'Computer Science Student',
+    'Software Developer',
+    'AI Developer',
     'Systems Engineering',
     'Machine Learning',
     'Fullstack Developer',
@@ -47,9 +48,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Jaideep Singh' }],
   metadataBase: new URL('https://jaideepsingh.dev'),
   openGraph: {
-    title: 'Jaideep Singh — Software & AI Engineer',
+    title: 'Jaideep Singh — Computer Science Student | AI & Software Developer',
     description:
-      'Gothic computational archive documenting software engineering, AI systems infrastructure, and technical work.',
+      'Portfolio of Jaideep Singh, a Computer Science student building software, AI/ML systems, backend infrastructure, and modern web applications.',
     type: 'website',
     locale: 'en_US',
     siteName: 'Jaideep Singh Portfolio',

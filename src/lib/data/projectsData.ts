@@ -31,6 +31,7 @@ export interface Project {
   results?: string[];
   metrics?: { label: string; value: string }[];
   links?: ProjectLink[];
+  liveUrl?: string;
   asciiDiagram?: string;
   isPlaceholder?: boolean;
 }
@@ -41,10 +42,11 @@ export const PROJECTS_DATA: Project[] = [
     title: 'POLAREMS',
     subtitle: 'AI-Driven Smart Energy Management System for Polar Research Stations',
     category: 'SYSTEMS & AI',
-    role: 'Software & AI Engineer',
+    role: 'AI & Software Developer',
     status: 'PROTOTYPE SYSTEM',
     featured: true,
-    bentoSpan: 'col-span-12 lg:col-span-8',
+    bentoSpan: 'col-span-12 lg:col-span-12',
+    liveUrl: 'https://sih-workspace-ruddy.vercel.app/',
     shortDescription:
       'Asynchronous microgrid energy management platform engineered for load/renewable forecasting, battery/diesel dispatch optimization, and digital-twin simulation at extreme-environment polar research stations.',
     longDescription:
@@ -128,64 +130,100 @@ export const PROJECTS_DATA: Project[] = [
                                 | (FORECAST & SIMULATE) |
                                 +-----------------------+
 `,
-    links: [],
+    links: [
+      {
+        label: 'VIEW LIVE SITE',
+        url: 'https://sih-workspace-ruddy.vercel.app/',
+        type: 'demo',
+      },
+      {
+        label: 'GITHUB',
+        url: 'https://github.com/JS-CODEs-0/SIH-WORKSPACE',
+        type: 'github',
+      },
+    ],
   },
   {
-    id: 'autonomous-agent-archive',
-    title: 'AGENTIC COMPUTATION LAB',
-    subtitle: 'Multi-Agent Workflow & Task Orchestration Engine',
-    category: 'AI & SYSTEMS',
-    role: 'Software & AI Engineer',
-    status: 'RESEARCH ARCHIVE',
-    featured: false,
-    bentoSpan: 'col-span-12 lg:col-span-4',
+    id: 'sk-yoga',
+    title: 'SK YOGA',
+    subtitle: 'Responsive Digital Platform for SK Yoga Classes',
+    category: 'WEB DEVELOPMENT',
+    role: 'Web Developer',
+    status: 'DEPLOYED WEBSITE',
+    featured: true,
+    bentoSpan: 'col-span-12 lg:col-span-6',
+    liveUrl: 'https://www.skyogacentre.com/',
     shortDescription:
-      'Experimental framework exploring autonomous agent communication, tool invocation workflows, and state-driven task completion.',
-    technologies: ['Python', 'TypeScript', 'LLM Architectures', 'JSON Schema'],
+      'Responsive web application engineered for SK Yoga Classes in Jodhpur, Rajasthan. Features custom video intro player, section navigation, class schedules, gallery, and direct WhatsApp contact integration.',
+    longDescription:
+      'A bespoke digital platform built for SK Yoga Classes guided by Kamlesh Sir in Jodhpur, Rajasthan. Designed to present traditional yoga offerings across all ages and levels, featuring smooth scroll interactions, optimized HTML5 video media, studio values showcase, and direct WhatsApp communication channels.',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'HTML5 Video', 'Responsive Design'],
     problem:
-      'Complex multi-step tasks require structured execution loops, state validation, and reliable fallback strategies for tool-using AI models.',
+      'Local yoga studios require clear, accessible web presence to communicate traditional practice offerings, schedules, studio philosophy, and direct client inquiry options.',
     approach:
-      'Constructed a deterministic state machine for managing agent context, memory persistence, and tool evaluation cycles.',
-    links: [],
-    isPlaceholder: true,
+      'Built a lightweight, responsive web application using clean semantic HTML5, custom CSS styling, smooth scroll triggers, interactive intro video controls, and direct WhatsApp API links.',
+    implementation:
+      'Implemented custom mobile menu drawer, full-screen background video intro overlay with bypass controls, image reveal animations, and accessible contact triggers.',
+    engineeringDecisions: [
+      'Leveraged lightweight native JavaScript without external heavy framework overhead for ultra-fast load times.',
+      'Implemented progressive image loading and HTML5 video optimization for seamless mobile web performance.',
+    ],
+    results: [
+      'Delivered responsive multi-section landing page with interactive class schedules and direct messaging.',
+    ],
+    links: [
+      {
+        label: 'VIEW LIVE SITE',
+        url: 'https://www.skyogacentre.com/',
+        type: 'demo',
+      },
+      {
+        label: 'GITHUB',
+        url: 'https://github.com/JS-CODEs-0/sk-yoga',
+        type: 'github',
+      },
+    ],
   },
   {
-    id: 'distributed-systems-engine',
-    title: 'DISTRIBUTED DATA PIPELINE',
-    subtitle: 'Low-Latency Event Stream & Microservice Core',
-    category: 'SYSTEMS ARCHITECTURE',
-    role: 'Systems Engineer',
-    status: 'SYSTEM ARCHIVE',
-    featured: false,
-    bentoSpan: 'col-span-12 lg:col-span-4',
+    id: 'editor-mohit',
+    title: 'EDITOR MOHIT',
+    subtitle: 'Portfolio Showcase for Cinematic Video Editor Mohit Motwani',
+    category: 'WEB DEVELOPMENT',
+    role: 'Web Developer',
+    status: 'DEPLOYED WEBSITE',
+    featured: true,
+    bentoSpan: 'col-span-12 lg:col-span-6',
+    liveUrl: 'http://editor-mohit.vercel.app/',
     shortDescription:
-      'Modular event processing core designed for asynchronous data routing, state synchronization, and reliable message queuing.',
-    technologies: ['Node.js', 'TypeScript', 'Distributed Queues', 'REST/gRPC'],
+      'High-impact portfolio showcase for cinematic video editor Mohit Motwani. Features custom background video loopers, smooth scroll reveals, interactive skills grid, video showcase cards, and direct contact options.',
+    longDescription:
+      'An editorial, multimedia-rich portfolio application designed for cinematic video editor Mohit Motwani. Built to highlight video editing work, Instagram Reels, gaming content edits, and motion graphics services through background video hero players, custom cursor follower, dynamic loaders, and interactive project cards.',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'HTML5 Video', 'Font Awesome'],
     problem:
-      'Ensuring consistent data delivery and status verification across asynchronous service nodes without message duplication.',
+      'Creative media editors need high-impact, visual-first digital portfolios to showcase video showreels, client work samples, and direct hire inquiry channels.',
     approach:
-      'Implemented transactional queue handling with explicit ack mechanisms and structured log verification.',
-    links: [],
-    isPlaceholder: true,
-  },
-  {
-    id: 'creative-shader-lab',
-    title: 'GOTHIC COMPUTATIONAL LAB',
-    subtitle: 'Minimalist Monospaced & ASCII Interface System',
-    category: 'CREATIVE COMPUTATION',
-    role: 'Frontend Architect',
-    status: 'ACTIVE LAB',
-    featured: false,
-    bentoSpan: 'col-span-12 lg:col-span-8',
-    shortDescription:
-      'High-performance design system and component architecture built for gothic technical editorial applications and monospaced visual archives.',
-    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
-    problem:
-      'Creating dense, information-rich technical interfaces that remain legible, responsive, and visually striking without relying on heavy WebGL assets.',
-    approach:
-      'Developed lightweight custom rendering patterns for monospaced ASCII art, hair-line layout grids, and accessible drawer/modal components.',
-    links: [],
-    isPlaceholder: true,
+      'Designed a sleek, dark-themed responsive website incorporating HTML5 video background loops, custom cursor tracking, animated section reveals, and structured service/skill matrices.',
+    implementation:
+      'Structured using semantic HTML5, modular CSS stylesheets, custom JS cursor followers, scroll progress indicators, and responsive media containers.',
+    engineeringDecisions: [
+      'Utilized video background wrappers with dark overlays to ensure text contrast and legibility.',
+      'Implemented custom navigation toggle and smooth section scrolling for intuitive mobile viewing.',
+    ],
+    results: [
+      'Created a video showcase platform presenting cinematic edits, skills breakdown, and direct client hire triggers.',
+    ],
+    links: [
+      {
+        label: 'VIEW LIVE SITE',
+        url: 'http://editor-mohit.vercel.app/',
+        type: 'demo',
+      },
+      {
+        label: 'GITHUB',
+        url: 'https://github.com/JS-CODEs-0/editor-mohit',
+        type: 'github',
+      },
+    ],
   },
 ];
 

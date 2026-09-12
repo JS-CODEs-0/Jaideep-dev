@@ -1,217 +1,134 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import Image from 'next/image';
+import { motion, useReducedMotion } from 'framer-motion';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { DitherHalftoneSurface } from '@/components/ui/DitherHalftoneSurface';
 import { DataHeaderBar } from '@/components/ui/DataHeaderBar';
 import { CornerMarks } from '@/components/ui/CornerMarks';
 
-interface FormState {
-  name: string;
-  email: string;
-  message: string;
-}
-
-interface FormErrors {
-  name?: string;
-  email?: string;
-  message?: string;
-}
-
 export const ContactSection: React.FC = () => {
-  const [formData, setFormData] = useState<FormState>({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const [errors, setErrors] = useState<FormErrors>({});
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'submitted'>('idle');
-
-  const validate = (): boolean => {
-    const newErrors: FormErrors = {};
-    if (!formData.name.trim()) {
-      newErrors.name = 'NAME IS REQUIRED';
-    }
-    if (!formData.email.trim()) {
-      newErrors.email = 'EMAIL IS REQUIRED';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'INVALID EMAIL FORMAT';
-    }
-    if (!formData.message.trim()) {
-      newErrors.message = 'MESSAGE CONTENT IS REQUIRED';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-
-    setStatus('submitting');
-    setTimeout(() => {
-      setStatus('submitted');
-      setFormData({ name: '', email: '', message: '' });
-      setErrors({});
-    }, 600);
-  };
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <SectionWrapper id="contact" className="border-b border-border-gothic">
-      <SectionHeader
-        index="06 // CONTACT"
-        title="HAVE SOMETHING WORTH BUILDING?"
-        subtitle="Initiate technical inquiries, system architecture discussions, or collaboration."
-      />
+    <SectionWrapper id="contact" className="relative border-b border-border-gothic overflow-hidden bg-obsidian">
+      {/* Background Dark Metallic Gothic Knight Image Layer */}
+      <motion.div
+        aria-hidden="true"
+        initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 1.03 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: shouldReduceMotion ? 0.1 : 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden"
+      >
+        <div className="relative w-full h-full">
+          <Image
+            src="/images/contact-halftone.jpg"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            className="object-cover object-center opacity-45 mix-blend-screen filter contrast-125 brightness-110"
+          />
+          {/* Subtle Vignette Masks to guarantee 100% text legibility across the full canvas */}
+          <div className="absolute inset-0 bg-gradient-to-r from-obsidian/80 via-obsidian/45 to-obsidian/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-obsidian/60 via-transparent to-obsidian/60" />
+        </div>
+      </motion.div>
 
-      <div className="grid grid-cols-12 gap-6 lg:gap-8 items-stretch relative">
-        <CornerMarks />
+      {/* Foreground Content */}
+      <div className="relative z-10">
+        <SectionHeader
+          index="04 // CONTACT"
+          title="LET'S BUILD SOMETHING."
+          subtitle="Open to learning, building, collaborating, and discussing software, AI systems, backend architecture, and web development."
+        />
 
-        {/* Left Column: Direct Editorial Text (6 cols desktop) */}
-        <DitherHalftoneSurface className="col-span-12 lg:col-span-6 p-8 flex flex-col justify-between">
-          <div>
-            <DataHeaderBar index="TRANSMISSION" title="CONTACT PROTOCOL" className="mb-4" />
+        <div className="grid grid-cols-12 gap-6 lg:gap-8 items-stretch relative">
+          <CornerMarks />
 
-            <h3 className="font-serif text-3xl sm:text-4xl text-bone uppercase mb-6 leading-tight">
-              OPEN FOR DISCUSSIONS ON SYSTEMS ARCHITECTURE & AI ENGINEERING.
-            </h3>
+          {/* Left Column: Direct Outreach Prompt */}
+          <DitherHalftoneSurface className="col-span-12 lg:col-span-6 p-8 flex flex-col justify-between">
+            <div>
+              <DataHeaderBar index="01" title="INQUIRIES & COLLABORATION" className="mb-4" />
 
-            <p className="font-sans text-base sm:text-lg text-parchment leading-relaxed mb-6">
-              Whether you are architecting asynchronous backend infrastructure, continuous telemetry systems, or complex data pipelines, reach out directly.
-            </p>
+              <h3 className="font-serif text-3xl sm:text-4xl text-bone uppercase mb-6 leading-tight">
+                HAVE A PROJECT, IDEA, OR TECHNICAL PROBLEM WORTH WORKING THROUGH?
+              </h3>
 
-            <div className="p-4 bg-obsidian border border-border-gothic font-mono text-xs text-stone space-y-2">
-              <div className="flex justify-between">
-                <span>IDENTITY:</span>
-                <span className="text-bone">JAIDEEP SINGH</span>
-              </div>
-              <div className="flex justify-between">
-                <span>ROLE:</span>
-                <span className="text-bone">SOFTWARE & AI ENGINEER</span>
-              </div>
-              <div className="flex justify-between">
-                <span>LOCATION:</span>
-                <span className="text-olive">INDIA</span>
-              </div>
-              <div className="flex justify-between">
-                <span>AVAILABILITY:</span>
-                <span className="text-olive">OPEN FOR COLLABORATION</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-6 mt-6 border-t border-border-gothic/40 font-mono text-[10px] text-stone">
-            STATUS: ENDPOINT READY FOR DIRECT MESSAGING
-          </div>
-        </DitherHalftoneSurface>
-
-        {/* Right Column: Accessible Contact Form (6 cols desktop) */}
-        <DitherHalftoneSurface className="col-span-12 lg:col-span-6 p-8">
-          <DataHeaderBar index="FORM" title="DIRECT MESSAGE TRANSMISSION" badge="CLIENT-VALIDATED" className="mb-6" />
-
-          {status === 'submitted' ? (
-            <div className="p-6 bg-obsidian border border-border-accent text-center font-mono space-y-4">
-              <div className="text-olive text-sm font-semibold uppercase">
-                [ TRANSMISSION RECEIVED ]
-              </div>
-              <p className="font-sans text-parchment text-sm">
-                Your message details have been validated. Thank you for reaching out.
+              <p className="font-sans text-base sm:text-lg text-parchment leading-relaxed mb-6">
+                I build reliable software infrastructure, AI data pipelines, and responsive web platforms. Feel free to reach out directly via GitHub to discuss technical builds.
               </p>
-              <button
-                type="button"
-                onClick={() => setStatus('idle')}
-                className="text-xs uppercase tracking-wider text-obsidian bg-bone hover:bg-white px-4 py-2 border border-bone transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-accent"
-              >
-                [ SEND ANOTHER MESSAGE ]
-              </button>
+
+              <div className="p-4 bg-obsidian/60 border border-border-gothic font-mono text-xs text-stone space-y-2">
+                <div className="flex justify-between">
+                  <span>IDENTITY:</span>
+                  <span className="text-bone">JAIDEEP SINGH</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>ROLE:</span>
+                  <span className="text-bone">CS STUDENT · AI & DEVELOPER</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>LOCATION:</span>
+                  <span className="text-olive">INDIA</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>STATUS:</span>
+                  <span className="text-olive">OPEN FOR COLLABORATION</span>
+                </div>
+              </div>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} noValidate className="space-y-5 font-mono text-xs">
-              {/* Name Input */}
-              <div>
-                <label htmlFor="contact-name" className="block text-stone uppercase tracking-wider mb-2">
-                  NAME / IDENTIFIER <span className="text-olive">*</span>
-                </label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  aria-invalid={!!errors.name}
-                  aria-describedby={errors.name ? 'name-error' : undefined}
-                  className="w-full bg-obsidian border border-border-gothic text-bone px-4 py-3 focus:border-border-accent focus:outline-none transition-colors"
-                  placeholder="Your Name"
-                />
-                {errors.name && (
-                  <span id="name-error" className="text-rose-400 text-[10px] mt-1 block">
-                    [{errors.name}]
-                  </span>
-                )}
-              </div>
 
-              {/* Email Input */}
-              <div>
-                <label htmlFor="contact-email" className="block text-stone uppercase tracking-wider mb-2">
-                  EMAIL ADDRESS <span className="text-olive">*</span>
-                </label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  aria-invalid={!!errors.email}
-                  aria-describedby={errors.email ? 'email-error' : undefined}
-                  className="w-full bg-obsidian border border-border-gothic text-bone px-4 py-3 focus:border-border-accent focus:outline-none transition-colors"
-                  placeholder="name@domain.com"
-                />
-                {errors.email && (
-                  <span id="email-error" className="text-rose-400 text-[10px] mt-1 block">
-                    [{errors.email}]
-                  </span>
-                )}
-              </div>
+            <div className="pt-6 mt-6 border-t border-border-gothic/40 font-mono text-[10px] text-stone">
+              LOCATION: INDIA // TIMEZONE: IST (UTC+5:30)
+            </div>
+          </DitherHalftoneSurface>
 
-              {/* Message Input */}
-              <div>
-                <label htmlFor="contact-message" className="block text-stone uppercase tracking-wider mb-2">
-                  MESSAGE / PROJECT SCOPE <span className="text-olive">*</span>
-                </label>
-                <textarea
-                  id="contact-message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  aria-invalid={!!errors.message}
-                  aria-describedby={errors.message ? 'message-error' : undefined}
-                  className="w-full bg-obsidian border border-border-gothic text-bone px-4 py-3 focus:border-border-accent focus:outline-none transition-colors resize-none"
-                  placeholder="Describe your inquiry or technical project..."
-                />
-                {errors.message && (
-                  <span id="message-error" className="text-rose-400 text-[10px] mt-1 block">
-                    [{errors.message}]
-                  </span>
-                )}
-              </div>
+          {/* Right Column: Direct Contact Links Block */}
+          <DitherHalftoneSurface className="col-span-12 lg:col-span-6 p-8 flex flex-col justify-between">
+            <div>
+              <DataHeaderBar index="02" title="DIRECT LINKS" className="mb-6" />
 
-              {/* Submit Trigger */}
-              <div className="pt-2 flex flex-col gap-3">
-                <button
-                  type="submit"
-                  disabled={status === 'submitting'}
-                  className="w-full uppercase tracking-wider text-obsidian bg-bone hover:bg-white px-6 py-3.5 border border-bone transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-accent font-bold"
+              <div className="space-y-4 font-mono text-xs">
+                {/* GitHub Link */}
+                <a
+                  href="https://github.com/JS-CODEs-0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-4 bg-obsidian/60 border border-border-gothic text-bone hover:border-border-accent hover:text-white transition-colors group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-accent"
                 >
-                  {status === 'submitting' ? '[ TRANSMITTING... ]' : '[ TRANSMIT MESSAGE → ]'}
-                </button>
-                <span className="text-[10px] text-stone text-center">
-                  * Form client-validated. Backend email service integration ready.
-                </span>
+                  <div>
+                    <span className="text-stone block text-[10px] uppercase mb-0.5">CODE REPOSITORIES</span>
+                    <span className="font-bold text-sm tracking-wide">[ GITHUB ]</span>
+                  </div>
+                  <span className="text-olive group-hover:translate-x-1 transition-transform">
+                    github.com/JS-CODEs-0 ↗
+                  </span>
+                </a>
+
+                {/* Developer Profile Info */}
+                <div className="p-4 bg-obsidian/60 border border-border-gothic text-stone space-y-2">
+                  <span className="text-bone font-medium block text-xs uppercase mb-1">
+                    TECHNICAL FOCUS AREAS:
+                  </span>
+                  <ul className="space-y-1 text-[11px] list-disc list-inside text-parchment font-sans">
+                    <li>Asynchronous Python APIs & PostgreSQL Databases</li>
+                    <li>Machine Learning Forecasting & Anomaly Solvers</li>
+                    <li>Responsive Modern Web Applications & Interfaces</li>
+                  </ul>
+                </div>
               </div>
-            </form>
-          )}
-        </DitherHalftoneSurface>
+            </div>
+
+            <div className="pt-6 mt-6 border-t border-border-gothic/40 font-mono text-[10px] text-stone flex justify-between items-center">
+              <span>JAIDEEP SINGH</span>
+              <span className="text-olive">CS STUDENT · AI & DEVELOPER</span>
+            </div>
+          </DitherHalftoneSurface>
+        </div>
       </div>
     </SectionWrapper>
   );

@@ -42,8 +42,8 @@ export const AboutSection: React.FC = () => {
       <div className="relative z-10">
         <SectionHeader
           index="02 // ABOUT"
-          title="COMPUTATIONAL PERSPECTIVE"
-          subtitle="Engineering rationale, architectural methodology, and domain focus."
+          title="ABOUT"
+          subtitle="Background, engineering approach, and domain focus."
         />
 
         {/* Tri-Column Gothic Editorial Floor */}
@@ -53,35 +53,35 @@ export const AboutSection: React.FC = () => {
           {/* Column 1: Vertical Index & Architectural Intent (3 cols desktop) */}
           <DitherHalftoneSurface className="col-span-12 lg:col-span-3 p-6 flex flex-col justify-between">
             <div>
-              <DataHeaderBar index="01" title="METHODOLOGY" className="mb-4" />
+              <DataHeaderBar index="01" title="APPROACH" className="mb-4" />
               <h4 className="font-serif text-2xl text-bone uppercase mb-3">
-                EXPLICIT & DECOUPLED
+                STRUCTURED & RELIABLE
               </h4>
               <p className="font-sans text-xs text-stone leading-relaxed mb-4">
-                Prioritizing strict type-safety, empirical test validation, and asynchronous microservices over unverified assumptions.
+                Prioritizing clear system architecture, test validation, and responsive interface design over unnecessary complexity.
               </p>
             </div>
 
             <div className="pt-4 border-t border-border-gothic/50 font-mono text-[10px] text-olive uppercase tracking-widest">
-              PARADIGM: VERIFIED SYSTEMS
+              FOCUS: SOFTWARE & AI
             </div>
           </DitherHalftoneSurface>
 
           {/* Column 2: Main Display Editorial Statement (5 cols desktop) */}
           <DitherHalftoneSurface className="col-span-12 lg:col-span-5 p-8 flex flex-col justify-between">
             <div>
-              <DataHeaderBar index="02" title="PHILOSOPHY" className="mb-4" />
+              <DataHeaderBar index="02" title="OVERVIEW" className="mb-4" />
 
               <h3 className="font-serif text-3xl sm:text-4xl text-bone uppercase mb-6 leading-snug">
-                BUILDING SOFTWARE THAT WITHSTANDS COMPLEXITY & EXTREME CONDITIONS.
+                BUILDING RELIABLE SOFTWARE & INTELLIGENT SYSTEMS.
               </h3>
 
               <div className="space-y-4 font-sans text-sm sm:text-base text-parchment leading-relaxed">
                 <p>
-                  I am a Software & AI Engineer focused on developing asynchronous backend frameworks, continuous telemetry ingestion tools, and intelligent control architectures.
+                  I&apos;m a first-year Computer Science student focused on learning by building. I work across software development, AI/ML, backend systems, and modern web applications, using projects to turn what I learn into working systems.
                 </p>
                 <p>
-                  Through projects such as PolarEMS, my work explores polar microgrid energy management systems, load and renewable forecasting, and high-density technical web interfaces.
+                  Projects like PolarEMS have taken me into asynchronous backend architecture, energy-management simulation, forecasting, and optimization, while my web builds have given me experience creating responsive digital experiences for real-world businesses.
                 </p>
               </div>
             </div>
@@ -96,19 +96,19 @@ export const AboutSection: React.FC = () => {
           <div className="col-span-12 lg:col-span-4 grid grid-cols-1 gap-6">
             {/* Card: Focus */}
             <DitherHalftoneSurface className="p-6">
-              <DataHeaderBar index="01 // DOMAIN FOCUS" badge="ACTIVE" className="mb-3" />
+              <DataHeaderBar index="01 // DOMAIN FOCUS" className="mb-3" />
               <h4 className="font-serif text-xl text-bone uppercase mb-1">SYSTEMS & AI</h4>
               <p className="font-sans text-xs text-stone leading-relaxed">
-                Asynchronous telemetry ingestion, microgrid simulation solvers, ML forecasting, and type-safe APIs.
+                Asynchronous backend APIs, ML forecasting models, telemetry processing, and clean web applications.
               </p>
             </DitherHalftoneSurface>
 
             {/* Card: Currently */}
             <DitherHalftoneSurface className="p-6">
-              <DataHeaderBar index="02 // CURRENTLY" badge="ENGAGED" className="mb-3" />
-              <h4 className="font-serif text-xl text-bone uppercase mb-1">POLAREMS ARCHITECTURE</h4>
+              <DataHeaderBar index="02 // CURRENT PROJECTS" className="mb-3" />
+              <h4 className="font-serif text-xl text-bone uppercase mb-1">POLAREMS & WEB BUILDS</h4>
               <p className="font-sans text-xs text-stone leading-relaxed">
-                Refining microgrid energy management solvers, async SQLAlchemy 2.0 pipelines, and mission control dashboards.
+                Developing energy management simulation solvers, async database pipelines, and responsive web platforms.
               </p>
             </DitherHalftoneSurface>
           </div>

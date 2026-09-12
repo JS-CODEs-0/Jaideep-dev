@@ -202,11 +202,21 @@ export const ProjectDetailDrawer: React.FC<ProjectDetailDrawerProps> = ({
             </div>
 
             {/* Bottom Footer Actions */}
-            <div className="p-6 border-t border-border-gothic bg-charcoal/80 backdrop-blur-sm flex items-center justify-between gap-4 font-mono text-xs">
+            <div className="p-6 border-t border-border-gothic bg-charcoal/80 backdrop-blur-sm flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-xs">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center uppercase tracking-wider text-obsidian bg-bone hover:bg-white py-3 border border-bone transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-accent font-semibold"
+                >
+                  [ VIEW LIVE SITE ↗ ]
+                </a>
+              )}
               <Link
                 href={`/work/${project.id}`}
                 onClick={onClose}
-                className="w-full text-center uppercase tracking-wider text-obsidian bg-bone hover:bg-white py-3 border border-bone transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-accent"
+                className="w-full text-center uppercase tracking-wider text-bone bg-charcoal hover:bg-elevated border border-border-gothic py-3 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-accent"
               >
                 [ OPEN FULL CASE STUDY ↗ ]
               </Link>

@@ -8,7 +8,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 import { DitherHalftoneSurface } from '@/components/ui/DitherHalftoneSurface';
 import { DataHeaderBar } from '@/components/ui/DataHeaderBar';
 
-interface EngineeringArchiveEntry {
+interface BuildArchiveEntry {
   index: string;
   title: string;
   category: string;
@@ -18,11 +18,11 @@ interface EngineeringArchiveEntry {
   deliverables: string[];
 }
 
-const ARCHIVE_ENTRIES: EngineeringArchiveEntry[] = [
+const ARCHIVE_ENTRIES: BuildArchiveEntry[] = [
   {
     index: '01',
     title: 'POLAREMS ENERGY SYSTEM ARCHITECTURE',
-    category: 'SYSTEMS & AI INITIATIVE',
+    category: 'SYSTEMS & AI BUILD',
     scope: 'Microgrid Energy Management & Async Backend',
     status: 'VERIFIED REPO',
     summary:
@@ -35,29 +35,30 @@ const ARCHIVE_ENTRIES: EngineeringArchiveEntry[] = [
   },
   {
     index: '02',
-    title: 'GOTHIC COMPUTATIONAL WEB SYSTEM',
-    category: 'CREATIVE COMPUTATION BUILD',
-    scope: 'Gothic Digital Archive & Editorial Design System',
-    status: 'ACTIVE SYSTEM',
+    title: 'SK YOGA DIGITAL PLATFORM',
+    category: 'WEB DEVELOPMENT BUILD',
+    scope: 'Responsive Web Application & Video Media Integration',
+    status: 'DEPLOYED REPO',
     summary:
-      'Designed and implemented a high-density, monospaced personal archive and portfolio platform utilizing Next.js 14, React 18, and Tailwind CSS.',
+      'Built a responsive web application for SK Yoga Classes in Jodhpur, featuring HTML5 video intro, studio value showcases, class schedules, and WhatsApp direct links.',
     deliverables: [
-      'Constructed asymmetric Bento grid layout primitives with 1px hairline borders and subtle corner crosshairs.',
-      'Implemented accessible, lightweight monospaced ASCII art rendering systems without WebGL overhead.',
-      'Enforced strict keyboard accessibility, reduced motion compatibility, and zero-error TypeScript type safety.',
+      'Implemented clean HTML5, custom CSS styling, and responsive layout across mobile and desktop breakpoints.',
+      'Constructed custom full-screen intro video overlay with user bypass controls and media optimization.',
+      'Integrated direct WhatsApp communication channels for client inquiry handling.',
     ],
   },
   {
     index: '03',
-    title: 'AGENTIC SYSTEMS & DISTRIBUTED LAB',
-    category: 'SYSTEMS RESEARCH PROJECT',
-    scope: 'Multi-Agent Orchestration & Event Queue Research',
-    status: 'RESEARCH ARCHIVE',
+    title: 'EDITOR MOHIT PORTFOLIO SHOWCASE',
+    category: 'WEB DEVELOPMENT BUILD',
+    scope: 'High-Impact Editorial & Video Portfolio Site',
+    status: 'DEPLOYED REPO',
     summary:
-      'Explored state-machine execution loops, deterministic agent memory structures, and asynchronous microservice queue architectures.',
+      'Engineered a visual-first portfolio showcase site for cinematic video editor Mohit Motwani, featuring HTML5 background video loopers and interactive service matrices.',
     deliverables: [
-      'Built multi-step tool invocation schemas with JSON Schema validation and fallback handling.',
-      'Investigated transactional message queue patterns for reliable event synchronization across async nodes.',
+      'Built dynamic background video wrappers with custom dark overlays to enforce high text contrast.',
+      'Created custom cursor tracking effects, scroll reveal animations, and video project cards.',
+      'Structured interactive service cards, skills indicators, and client hire triggers.',
     ],
   },
 ];
@@ -66,7 +67,7 @@ export const ExperienceSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <SectionWrapper id="experience" className="relative border-b border-border-gothic overflow-hidden bg-obsidian">
+    <SectionWrapper id="archive" className="relative border-b border-border-gothic overflow-hidden bg-obsidian">
       {/* Background Monochrome Halftone Artwork Layer Stretching Across Full Section */}
       <motion.div
         aria-hidden="true"
@@ -94,9 +95,9 @@ export const ExperienceSection: React.FC = () => {
       {/* Foreground Content */}
       <div className="relative z-10">
         <SectionHeader
-          index="04 // ENGINEERING ARCHIVE"
-          title="ENGINEERING ARCHIVE"
-          subtitle="Archival record of verified engineering projects, system builds, and software initiatives."
+          index="04 // BUILD ARCHIVE"
+          title="BUILD ARCHIVE"
+          subtitle="Selected personal projects, experiments, and engineering builds."
         />
 
         <div className="space-y-6">
@@ -135,4 +136,3 @@ export const ExperienceSection: React.FC = () => {
     </SectionWrapper>
   );
 };
-

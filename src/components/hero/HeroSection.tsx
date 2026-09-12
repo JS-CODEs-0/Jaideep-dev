@@ -89,8 +89,8 @@ export const HeroSection: React.FC = () => {
             {/* Location & Status Tag */}
             <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
               <span className="w-2 h-2 rounded-full bg-olive animate-pulse" />
-              <span className="font-mono text-xs text-stone tracking-[0.2em] uppercase">
-                SOFTWARE & AI ENGINEER {'//'} INDIA
+              <span className="font-mono text-xs text-stone tracking-[0.15em] uppercase">
+                COMPUTER SCIENCE STUDENT · AI & SOFTWARE DEVELOPER {'//'} INDIA
               </span>
             </motion.div>
 
@@ -107,7 +107,7 @@ export const HeroSection: React.FC = () => {
             {/* Editorial Intro Prose */}
             <motion.p
               variants={itemVariants}
-              className="font-sans text-base sm:text-lg lg:text-xl text-parchment max-w-xl leading-relaxed mb-10 bg-obsidian/85 backdrop-blur-xs p-3 -ml-3 border-l-2 border-border-accent"
+              className="font-sans text-base sm:text-lg lg:text-xl text-parchment max-w-xl leading-relaxed mb-10 bg-obsidian/45 p-3 -ml-3 border-l-2 border-border-accent"
             >
               I build software and intelligent systems that turn complex problems into practical solutions.
             </motion.p>

@@ -15,7 +15,7 @@ export const DitherHalftoneSurface: React.FC<DitherHalftoneSurfaceProps> = ({
 }) => {
   return (
     <div
-      className={`relative bg-charcoal/80 bg-dither border border-border-gothic transition-colors duration-300 ${colSpan} ${className}`}
+      className={`relative bg-obsidian/45 bg-dither border border-border-gothic transition-colors duration-300 ${colSpan} ${className}`}
     >
       {children}
     </div>

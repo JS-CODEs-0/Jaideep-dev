@@ -62,7 +62,7 @@ export const Navigation: React.FC = () => {
             JAIDEEP SINGH
           </span>
           <span className="hidden sm:inline-block font-mono text-[10px] text-stone tracking-widest uppercase border-l border-border-gothic pl-3">
-            [SOFTWARE & AI ENGINEER]
+            [COMPUTER SCIENCE STUDENT · AI & SOFTWARE DEVELOPER]
           </span>
         </Link>
 

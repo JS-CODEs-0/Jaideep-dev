@@ -11,7 +11,7 @@ import { ASCII_GLYPH_SET } from '@/lib/ascii-data';
 const EXPERIMENT_SIGIL = `
       /\\
      /  \\     +----------------------+
-    / /\\ \\    | SPECIMEN: SIGIL_V1   |
+    / /\\ \\    | EXPERIMENT: SIGIL_V1 |
    / /  \\ \\   | GOTHIC COMPUTATION   |
   / /____\\ \\  +----------------------+
  /________\\ \\ | MATRIX DENSITY: 100% |
@@ -38,7 +38,7 @@ export const AsciiLabSection: React.FC = () => {
   const handleMutateSigil = () => {
     if (isMutating) return;
     setIsMutating(true);
-
+  
     let count = 0;
     const interval = setInterval(() => {
       count++;
@@ -65,19 +65,19 @@ export const AsciiLabSection: React.FC = () => {
   return (
     <SectionWrapper id="lab" className="border-b border-border-gothic">
       <SectionHeader
-        index="05 // ASCII & PIXEL LAB"
-        title="SPECIMEN PLATE EXHIBITION"
-        subtitle="Monospaced visual studies, dither density samplers, and character matrix lab."
+        index="05 // COMPUTATIONAL LAB"
+        title="GOTHIC COMPUTATIONAL LAB"
+        subtitle="Experiments in ASCII, typography, generative interfaces, and visual computation."
       />
 
       <div className="grid grid-cols-12 gap-6 lg:gap-8 items-stretch">
-        {/* Specimen 01: Dither Halftone Density Sampler (Ref 3 Inspiration) */}
+        {/* Specimen 01: Dither Halftone Density Sampler */}
         <DitherHalftoneSurface colSpan="col-span-12 lg:col-span-6" className="p-6 sm:p-8 flex flex-col justify-between">
           <div>
-            <DataHeaderBar index="SPECIMEN_01" title="DITHER HALFTONE SAMPLER" badge="INTERACTIVE" className="mb-4" />
+            <DataHeaderBar index="EXPERIMENT_01" title="DITHER HALFTONE SAMPLER" badge="INTERACTIVE" className="mb-4" />
 
             <p className="font-sans text-sm text-parchment leading-relaxed mb-6">
-              Interactive pixel dot density simulator creating tactile 3D shading and light highlights on pitch black surfaces without WebGL.
+              Interactive pixel dot density simulator exploring tactile 3D shading and light highlights on dark obsidian surfaces without WebGL dependencies.
             </p>
 
             {/* Dither Visual Box */}
@@ -109,10 +109,10 @@ export const AsciiLabSection: React.FC = () => {
           </div>
         </DitherHalftoneSurface>
 
-        {/* Specimen 02: Monospaced ASCII Sigil Mutator (Ref 4 Inspiration) */}
+        {/* Specimen 02: Monospaced ASCII Sigil Mutator */}
         <DitherHalftoneSurface colSpan="col-span-12 lg:col-span-6" className="p-6 sm:p-8 flex flex-col justify-between">
           <div>
-            <DataHeaderBar index="SPECIMEN_02" title="ASCII SIGIL MUTATOR" badge={isMutating ? 'MUTATING' : 'READY'} className="mb-4" />
+            <DataHeaderBar index="EXPERIMENT_02" title="ASCII SIGIL MUTATOR" badge={isMutating ? 'MUTATING' : 'READY'} className="mb-4" />
 
             <div className="py-4 flex justify-center bg-obsidian/90 border border-border-gothic/70 overflow-x-auto mb-6">
               <AsciiTextArt
@@ -136,17 +136,17 @@ export const AsciiLabSection: React.FC = () => {
           </div>
         </DitherHalftoneSurface>
 
-        {/* Specimen 03: Character Matrix & Micro-Barcode Grid (Ref 5 Inspiration) */}
+        {/* Specimen 03: Character Matrix & Micro-Barcode Grid */}
         <DitherHalftoneSurface colSpan="col-span-12" className="p-6 sm:p-8">
-          <DataHeaderBar index="SPECIMEN_03" title="TYPOGRAPHIC MATRIX & ALIGNMENT GRID" badge="JETBRAINS MONO" className="mb-4" />
+          <DataHeaderBar index="EXPERIMENT_03" title="TYPOGRAPHIC MATRIX & ALIGNMENT GRID" badge="JETBRAINS MONO" className="mb-4" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div>
               <h4 className="font-serif text-2xl sm:text-3xl text-bone uppercase mb-3">
-                MONOSPACED GRID & BARCODE SCHEMATICS
+                MONOSPACED GRID SCHEMATICS
               </h4>
               <p className="font-sans text-sm text-parchment leading-relaxed">
-                Precision character alignment ensures exact layout bounds across technical data headers, status badges, and micro-barcode bars.
+                Precision character alignment ensures exact layout bounds across technical data headers, status badges, and interface grids.
               </p>
             </div>
 
