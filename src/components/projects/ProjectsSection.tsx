@@ -36,12 +36,12 @@ export const ProjectsSection: React.FC = () => {
       >
         <div className="relative w-full h-full">
           <Image
-            src="/images/featured-work-halftone.png"
+            src="/images/back-feature-work.jpg"
             alt=""
             aria-hidden="true"
             fill
             priority
-            className="object-cover object-center lg:object-right-top opacity-35 mix-blend-screen filter contrast-125 brightness-110"
+            className="object-cover object-center lg:object-right-top opacity-40 mix-blend-screen filter contrast-125 brightness-110"
           />
           {/* Subtle Vignette & Contrast Mask to ensure 100% text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/70 to-obsidian/30 w-full lg:w-3/5" />
